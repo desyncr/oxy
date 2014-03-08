@@ -1,0 +1,12 @@
+<h1>404</h1>
+<h2><?php echo $this->message ?></h2>
+
+<?php if (isset($this->reason) && $this->reason): ?>
+    <p><?php echo $this->reason; ?></p>
+<?php endif ?>
+
+Exception:
+<?php
+if ($this->exception) {
+    echo $this->exception->getMessage();
+}
