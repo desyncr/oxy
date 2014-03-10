@@ -44,23 +44,9 @@ class Module
     public function getConfig()
     {
         return array(
-            'router' => array(
-                'routes' => array(
-                    'index' => array(
-                        'type'    => 'Zend\Mvc\Router\Http\Literal',
-                        'options' => array(
-                            'route'    => '/',
-                            'defaults' => array(
-                                'controller' => 'Application\Controller\Index',
-                                'action'     => 'index',
-                            ),
-                        ),
-                    ),
-                )
-            ),
             'controllers' => array(
                 'invokables' => array(
-                    'Application\Controller\Index' => 'Application\Controller\IndexController'
+                    'Application\Controller\IndexController' => 'Application\Controller\IndexController'
                 )
             ),
             'view_manager' => array(

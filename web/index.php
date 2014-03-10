@@ -11,6 +11,15 @@
  * @version  GIT:<>
  * @link     https://github.com/desyncr
  */
-chdir(dirname(__DIR__));
-require __DIR__ . '/../vendor/autoload.php';
-\Zend\Mvc\Application::init(require __DIR__ . '/../config/application.config.php')->run();
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Desyncr\Oxy\Router;
+use Desyncr\Oxy\Application;
+
+$router = new Router();
+$router->get('/', 'Application\Controller\IndexController');
+
+Application::init()
+    ->setRouter($router)
+    ->run();
+
